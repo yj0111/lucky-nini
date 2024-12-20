@@ -25,17 +25,17 @@ class Solution {
             int y = now[1];
             int count = now[2];//거리
             
-            //도착했어
+            //도착~
             if(x == maps.length-1 && y == maps[0].length-1){
                 return count;
             }
             
-            //4방향 탐색
             for(int i = 0; i<4; i++){
                 int nx = x + dx[i];
                 int ny = y + dy[i];
                 
-                if(nx>=0 && nx<maps.length && ny>=0 && ny<maps[0].length && !visited[nx][ny] && maps[nx][ny] == 1){
+                if(nx>=0 && nx<maps.length && ny>=0 && ny<maps[0].length && 
+                   !visited[nx][ny] && maps[nx][ny] == 1){
                     visited[nx][ny] = true;
                     q.offer(new int[]{nx,ny,count+1});
                 }
